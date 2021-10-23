@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Intro to MapView - Create a 2D map | Sample | ArcGIS API for JavaScript 4.21</title>
+    <link rel="stylesheet" href="../src/css/bulma.css">
+    <link rel="stylesheet" href="../src/css/index.css">
+    <script src="../src/js/lib/vue.js"></script>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.21/"></script>
+
+    <script>
+      var modules = [
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/WebTileLayer",
+      "esri/Basemap"
+      ];
+
+      require(modules, (Map, MapView, WebTileLayer, Basemap) => {
+        debugger;
+        GL.WebTileLayer = WebTileLayer;
+        GL.Basemap = Basemap;
+        GL.Map = Map;
+        GL.MapView = MapView;
+
+        GL.map = new Map({
+          basemap: "topo-vector"
+        });
+
+        GL.view = new MapView({
+          container: "viewDiv",
+          map: GL.map,
+          zoom: 5,
+          center: [-101.33789, 40.7639]
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+    <div id="xyz"><xyz></xyz></div>
+  </body>
+</html>
+<script src="../src/js/GISLayer.js"></script>
+<script src="xyz-tile-adding-panel.js"></script>
