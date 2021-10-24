@@ -2,8 +2,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>Adding Custom XYZ Tiled Basemap to ArcGIS Map</title>
-    <meta name="title" content="Adding Custom XYZ Tiled Basemap to ArcGIS Map 2D View">
+    <title>Adding Custom XYZ Tiled Basemap to ArcGIS Map 3D View</title>
+    <meta name="title" content="Adding Custom XYZ Tiled Basemap to ArcGIS Map 3D View">
     <meta name="description" content="With this example you can add own custom XYZ Tile map to a web based arcgis map. Usage of ArcGIS WebTileLayer and adding Free Basemaps">
     <meta name="keywords" content="arcgis javascript api webtilelayer, free basemap with arcgis javascipt, arcgis javascript adding basemap, adding xyz tile to arcgis">
     <meta name="robots" content="index, follow">
@@ -29,26 +29,27 @@
     <script>
       var modules = [
       "esri/Map",
-      "esri/views/MapView",
+      "esri/views/SceneView",
       "esri/layers/WebTileLayer",
       "esri/Basemap"
       ];
 
-      require(modules, (Map, MapView, WebTileLayer, Basemap) => {
+      require(modules, (Map, SceneView, WebTileLayer, Basemap) => {
         debugger;
         GL.WebTileLayer = WebTileLayer;
         GL.Basemap = Basemap;
         GL.Map = Map;
-        GL.MapView = MapView;
+        GL.SceneView = SceneView;
 
         GL.map = new Map({
-          basemap: "topo-vector"
+          basemap: "topo-vector",
+          ground: "world-elevation"
         });
 
-        GL.view = new MapView({
+        GL.view = new SceneView({
           container: "viewDiv",
           map: GL.map,
-          zoom: 5,
+          scale: 50000000,
           center: [-101.33789, 40.7639]
         });
       });
@@ -61,4 +62,4 @@
   </body>
 </html>
 <script src="../src/js/GISLayer.js"></script>
-<script src="./xyz-tile-adding-panel-2D.js"></script>
+<script src="./xyz-tile-adding-panel-3D.js"></script>

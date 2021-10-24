@@ -39,7 +39,7 @@ Vue.component('xyz', {
           }else{
             var subdomainsArray = this.subdomains.split(',');
             var url = this.url.replace(this.x.url,this.x.mask).replace(this.y.url,this.y.mask).replace(this.z.url,this.z.mask).replace(this.s.url,this.s.mask);
-            GL.addXYZTileBasemap({
+            GL.addXYZTileBasemap2D({
                 url:url,
                 subdomains:subdomainsArray,
                 attribute:'New Custom XYZ Tile'
