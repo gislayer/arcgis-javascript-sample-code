@@ -59,6 +59,9 @@ Vue.component('xyz', {
       addToMap:function(file){
         debugger;
         GL.addGeoJSONToMap(file);
+      },
+      remove:function(file){
+        GL.removeLayer(file.id);
       }
     },
     template: '<div v-if="onoff" class="leftTop">' +
@@ -79,9 +82,10 @@ Vue.component('xyz', {
         '       </p>'+
         '   </div>'+
 
-        '<table v-if="files.length>0" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"><thead><tr><th>#</th><th>File Name</th><th>Size (Kb)</th><th>Color</th><th>Add</th></tr></thead>'+
+        '<table v-if="files.length>0" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"><thead><tr><th>#</th><th>File Name</th><th>Size (Kb)</th><th>Color</th><th>Add</th><th>Remove</th></tr></thead>'+
           '<tbody><tr :key="i" v-for="(file,i) in files"><td>{{i+1}}</td><td>{{file.name}}</td><td>{{file.size}}</td><td><input type="color" v-model="file.color"></td>'+
           '<td><button @click="addToMap(file)" class="button is-success is-small">Add To Map</button></td>'+
+          '<td><button @click="remove(file)" class="button is-small is-danger">Remove</button></td>'+
           '</tr></tbody>'+
         '</table>'+
 

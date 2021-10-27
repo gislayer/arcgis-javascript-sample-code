@@ -58,6 +58,13 @@ GL.addTileLayerFromMapServer = function(obj){
   }
 }
 
+GL.removeLayer = function(id){
+  if(GL.layers[id]!==undefined){
+    GL.map.remove(GL.layers[id]);
+  }
+  delete GL.layers[id];
+}
+
 GL.addGeoJSONToMap = function(obj){
   debugger;
   if(GL.layers[obj.id]==undefined){
@@ -138,7 +145,7 @@ GL.geoJSONToArcgisGeoData = function(geojson,color){
             style = {
               type: "simple-line",
               color: color,
-              width: 1
+              width: 2
             };
             break;
           }
@@ -150,7 +157,7 @@ GL.geoJSONToArcgisGeoData = function(geojson,color){
             style = {
               type: "simple-line",
               color: color,
-              width: 1
+              width: 2
             };
             break;
           }
@@ -163,7 +170,7 @@ GL.geoJSONToArcgisGeoData = function(geojson,color){
               type: "simple-fill",
               color: color,
               outline: {
-                color: color,
+                color: "#000",
                 width: 1
               }
             };
@@ -178,7 +185,7 @@ GL.geoJSONToArcgisGeoData = function(geojson,color){
               type: "simple-fill",
               color: color,
               outline: {
-                color: color,
+                color: "#000",
                 width: 1
               }
             };
