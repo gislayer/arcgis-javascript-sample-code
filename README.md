@@ -12,13 +12,13 @@
 
  **SAMPLE-03:**
 
- - **Title** : Adding Tle Layer From ArcGIS MapServer - 2D View
+ - **Title** : Adding Tile Layer From ArcGIS MapServer - 2D View
  - **Module** : Mapserver TileLayer Usage
  - **Demo**: [Adding Tle Layer From ArcGIS MapServer - 2D View](https://github.com/gislayer/arcgis-javascript-sample-code)
 
  **SAMPLE-04:**
 
- - **Title** : Adding Tle Layer From ArcGIS MapServer - 3D View
+ - **Title** : Adding Tile Layer From ArcGIS MapServer - 3D View
  - **Module** : Mapserver TileLayer Usage
  - **Demo**: [Adding Tle Layer From ArcGIS MapServer - 3D View](https://github.com/gislayer/arcgis-javascript-sample-code)
 
