@@ -21,3 +21,9 @@
  - **Title** : Adding Tle Layer From ArcGIS MapServer - 3D View
  - **Module** : Mapserver TileLayer Usage
  - **Demo**: [Adding Tle Layer From ArcGIS MapServer - 3D View](https://github.com/gislayer/arcgis-javascript-sample-code)
+
+  **SAMPLE-05:**
+
+ - **Title** : Adding GeoJSON File To ArcGIS Map - 2D View
+ - **Module** : Graphic, GraphicsLayer
+ - **Demo**: [Adding GeoJSON File To ArcGIS Map - 2D View](https://github.com/gislayer/arcgis-javascript-sample-code)
