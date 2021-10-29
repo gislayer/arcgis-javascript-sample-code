@@ -1,12 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArcGIS API For Javascript - Education With Samples</title>
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Go to Coordinate & Get Address From Location - 3D View</title>
+    <meta name="title" content="Go to Coordinate & Get Address From Location - 3D View">
+    <meta name="description" content="If you have a coordinate, you can find the address using the ArcGIS API and navigate to this location on the map. Also you can change zoom">
+    <meta name="keywords" content="If you have a coordinate, you can find the address using the ArcGIS API and navigate to this location on the map. Also you can change zoom">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <link rel="stylesheet" href="./src/css/bulma.css">
+    <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="./src/js/lib/vue.js"></script>
+    <script src="./src/js/lib/turf.js"></script>
+    <style>
+
+    </style>      
+  </head>
+
+  <body>
+    <nav class="navbar is-dark" style="position: fixed; width: 100%;" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://upbeat-yalow-84ebdb.netlify.app/">
+            <h1 style="color: #00bcd4;">ArcGIS API For Javascript - With Projects</h1>
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="https://github.com/gislayer/arcgis-javascript-sample-code" target="_blank">
+              Udemy Course
+            </a>
+      
+            <a class="navbar-item" href="https://github.com/gislayer/arcgis-javascript-sample-code" target="_blank">
+              GitHub Repo
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link" >
+                More
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="https://editor.gislayer.com/" target="_blank">
+                  WebGIS Editor SaaS Project
+                </a>
+                <a class="navbar-item" href="https://mobile.gislayer.com/" target="_blank">
+                  Mobile Editor SaaS Project
+                </a>
+                <a class="navbar-item" href="https://www.alikilic.org/projects" target="_blank">
+                  Other Projects
+                </a>
+                <a class="navbar-item" href="https://www.alikilic.org/work-with-me" target="_blank">
+                  Work With Me
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item" href="https://www.alikilic.org/contact" target="_blank">
+                  Contact & Donate
+                </a>
+              </div>
+            </div>
+
+          </div>
+      
+          <div class="navbar-end">
+            
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-warning is-small" href="https://gislayer.com/" target="_blank">
+                  <strong>GISLayer</strong>
+                </a>
+                <a class="button is-danger is-small" href="https://alikilic.org/" target="_blank">
+                    <strong>Who is Ali Kilic</strong>
+                </a>
+              </div>
+            </div>
+            <div class="field" style="margin-top: 10px; margin-right: 10px;">
+                <p class="control has-icons-left">
+                  <input id="search" name="search" class="input is-small" type="search" placeholder="Search" style="width:300px">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-search"></i>
+                  </span>
+                </p>
+              </div>
+          </div>
+        </div>
+      </nav>
     
-</body>
+    <div class="container">
+        <div class="section">
+            <div class="columns">
+                <div class="column has-text-centered" style="margin-top:50px;">
+                  <h1 class="title">Sample Data, Projects, Document Posts, Udemy Videos are Below</h1><br>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div id="items"><items></items></div>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>ArcGIS API For Javascript Education With Projects</strong> Present by <a href="https://alikilic.org"><b>Ali Kilic</b></a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php"><b>MIT</b></a>. The website content
+            is licensed <a href="https://gislayer.com"><b>GISLayer INC.</b></a>.
+          </p>
+        </div>
+      </footer>
+
+  </body>
 </html>
+<script src="./src/js/items.js"></script>
