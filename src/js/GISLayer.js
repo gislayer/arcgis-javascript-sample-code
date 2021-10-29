@@ -214,3 +214,44 @@ GL.geoJSONToArcgisGeoData = function(geojson,color){
   });
   return newArr;
 }
+
+GL.setCenterAndZoom = function(center,zoom){
+  GL.view.goTo({
+    center:center,
+    zoom:zoom
+  });
+}
+
+
+GL.getAddressFromLocation = function(obj){
+  debugger;
+  var lat = parseFloat(obj.lat);
+  var lng = parseFloat(obj.lng);
+
+  GL.view.popup.open({
+    title: "Clicked Position: [" + lng.toFixed(3) + ", " + lat.toFixed(3) + "]",
+    location: {latitude:lat,longitude:lng}
+  });
+
+  const params = {
+    location:{
+      latitude:lat,
+      longitude:lng
+    }
+  }
+
+  const locatorTask = new GL.Locator({
+    url: "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"
+  });
+
+  locatorTask
+    .locationToAddress(params)
+    .then((response) => {
+      debugger;
+      GL.view.popup.content = response.address;
+    })
+    .catch(() => {
+      debugger;
+      GL.view.popup.content = "Adres is't found for this location";
+    });
+}
