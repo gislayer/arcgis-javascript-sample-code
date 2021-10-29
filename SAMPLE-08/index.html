@@ -2,8 +2,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>Go to Coordinate & Get Address From Location - 2D View</title>
-    <meta name="title" content="Go to Coordinate & Get Address From Location - 2D View">
+    <title>Go to Coordinate & Get Address From Location - 3D View</title>
+    <meta name="title" content="Go to Coordinate & Get Address From Location - 3D View">
     <meta name="description" content="If you have a coordinate, you can find the address using the ArcGIS API and navigate to this location on the map. Also you can change zoom">
     <meta name="keywords" content="If you have a coordinate, you can find the address using the ArcGIS API and navigate to this location on the map. Also you can change zoom">
     <meta name="robots" content="index, follow">
@@ -30,24 +30,24 @@
     <script>
       var modules = [
       "esri/Map",
-      "esri/views/MapView",
+      "esri/views/SceneView",
       "esri/tasks/Locator"
       ];
 
-      require(modules, (Map, MapView, Locator) => {
+      require(modules, (Map, SceneView, Locator) => {
         debugger;
         GL.Locator = Locator;
         GL.Map = Map;
-        GL.MapView = MapView;
+        GL.SceneView = SceneView;
 
         GL.map = new Map({
           basemap: "topo-vector"
         });
 
-        GL.view = new MapView({
+        GL.view = new GL.SceneView({
           container: "viewDiv",
           map: GL.map,
-          zoom: 5,
+          scale: 50000000,
           center: [-101.33789, 40.7639]
         });
 
