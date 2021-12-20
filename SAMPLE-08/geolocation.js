@@ -38,11 +38,6 @@ Vue.component('geolocation', {
       getAddress:function(){
         GL.setCenterAndZoom([this.lng,this.lat],this.zoom);
         GL.getAddressFromLocation({lat:this.lat,lng:this.lng});
-      },
-      bell:function(){
-        debugger;
-        var a = new Audio('../src/beep-09.mp3');
-        a.play(); 
       }
     },
     template: '<div v-if="onoff" class="leftTop">' +
@@ -93,7 +88,6 @@ Vue.component('geolocation', {
         '    <div class="field">'+
         '      <button @click="getAddress" class="button is-success is-small">Go & Find Address</button>'+
         '    </div>'+
-        '<button @click="bell">Bell</button>'+
         '  </div>'+
         '</div>'+
         
